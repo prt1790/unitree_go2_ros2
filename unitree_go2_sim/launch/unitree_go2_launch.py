@@ -74,7 +74,8 @@ def generate_launch_description():
     )
     
     # Description nodes and parameters
-    robot_description = {"robot_description": Command(["xacro ", LaunchConfiguration("unitree_go2_description_path")])}
+    robot_description = {"robot_description": Command(["xacro ", LaunchConfiguration("unitree_go2_description_path"),
+                                                       " robot_controllers:=", LaunchConfiguration("ros_control_file")])}
     
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
