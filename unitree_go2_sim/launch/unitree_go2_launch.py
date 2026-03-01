@@ -246,7 +246,12 @@ def generate_launch_description():
             # '/velodyne_points@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan',
             '/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry',
             '/rgb_image@sensor_msgs/msg/Image@gz.msgs.Image',
-            
+            # D455 RGBD camera bridges
+            '/d455/image@sensor_msgs/msg/Image[gz.msgs.Image',
+            '/d455/depth_image@sensor_msgs/msg/Image[gz.msgs.Image',
+            '/d455/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked',
+            '/d455/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo',
+
             # ROS to Gazebo
             '/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist',
             '/joint_group_effort_controller/joint_trajectory@trajectory_msgs/msg/JointTrajectory]gz.msgs.JointTrajectory',
