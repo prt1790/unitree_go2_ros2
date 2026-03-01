@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:macro name="unitree_go2_gazebo" params="robot_controllers">
-        <!-- Gazebo Sim plugins -->
-        <gazebo>
-            <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
-                <publish_link_pose>true</publish_link_pose>
-                <publish_sensor_pose>true</publish_sensor_pose>
-                <publish_collision_pose>false</publish_collision_pose>
-                <publish_visual_pose>false</publish_visual_pose>
-                <publish_nested_model_pose>false</publish_nested_model_pose>
-                <use_pose_vector_msg>true</use_pose_vector_msg>
-                <static_publisher>true</static_publisher>
-                <static_update_frequency>100</static_update_frequency>
-            </plugin>
-        </gazebo>
+<xacro:macro name="unitree_go2_gazebo" params="robot_controllers">
+  <!-- Gazebo Sim plugins -->
+  <gazebo>
+    <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+      <publish_link_pose>true</publish_link_pose>
+      <publish_sensor_pose>true</publish_sensor_pose>
+      <publish_collision_pose>false</publish_collision_pose>
+      <publish_visual_pose>false</publish_visual_pose>
+      <publish_nested_model_pose>false</publish_nested_model_pose>
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <static_publisher>true</static_publisher>
+      <static_update_frequency>100</static_update_frequency>
+    </plugin>
+  </gazebo>
 
         <!-- Robot-wide physics properties -->
         <!-- <gazebo>
@@ -24,14 +24,13 @@
             </plugin>
         </gazebo> -->
 
-        <!-- ROS2 Control plugin -->
-        <gazebo>
-            <plugin filename="gz_ros2_control-system"
-                name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-                <parameters>${robot_controllers}</parameters>
-                <robot_param_node>robot_state_publisher</robot_param_node>
-            </plugin>
-        </gazebo>
+  <!-- ROS2 Control plugin -->
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>${robot_controllers}</parameters>
+      <robot_param_node>robot_state_publisher</robot_param_node>
+    </plugin>
+  </gazebo>
 
         <!-- Odometry plugin -->
         <gazebo>
@@ -206,29 +205,30 @@
             <kd>1.0</kd>
         </gazebo>
 
-        <!-- RR leg -->
-        <gazebo reference="rh_hip_link">
-            <mu1>0.2</mu1>
-            <mu2>0.2</mu2>
-        </gazebo>
-        <gazebo reference="rh_upper_leg_link">
-            <mu1>0.2</mu1>
-            <mu2>0.2</mu2>
-            <self_collide>1</self_collide>
-            <kp>10000.0</kp>
-            <kd>1.0</kd>
-        </gazebo>
-        <gazebo reference="rh_lower_leg_link">
-            <mu1>0.2</mu1>
-            <mu2>0.2</mu2>
-            <self_collide>1</self_collide>
-        </gazebo>
-        <gazebo reference="rh_foot_link">
-            <mu1>0.6</mu1>
-            <mu2>0.6</mu2>
-            <self_collide>1</self_collide>
-            <kp>10000.0</kp>
-            <kd>1.0</kd>
-        </gazebo>
-    </xacro:macro>
+  <!-- RR leg -->
+  <gazebo reference="rh_hip_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+  <gazebo reference="rh_upper_leg_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <self_collide>1</self_collide>
+    <kp>10000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="rh_lower_leg_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <self_collide>1</self_collide>
+  </gazebo>
+  <gazebo reference="rh_foot_link">
+    <mu1>0.6</mu1>
+    <mu2>0.6</mu2>
+    <self_collide>1</self_collide>
+    <kp>10000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+
+</xacro:macro>
 </robot>
