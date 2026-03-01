@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<robot>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<xacro:macro name="unitree_go2_gazebo" params="robot_controllers">
   <!-- Gazebo Sim plugins -->
   <gazebo>
     <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
@@ -26,7 +27,7 @@
   <!-- ROS2 Control plugin -->
   <gazebo>
     <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-      <parameters>$(find unitree_go2_sim)/config/ros_control/ros_control.yaml</parameters>
+      <parameters>${robot_controllers}</parameters>
       <robot_param_node>robot_state_publisher</robot_param_node>
     </plugin>
   </gazebo>
@@ -228,4 +229,5 @@
     <kd>1.0</kd>
   </gazebo>
 
+</xacro:macro>
 </robot>
