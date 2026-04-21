@@ -25,13 +25,13 @@
         </gazebo> -->
 
   <!-- ROS2 Control plugin -->
-  <gazebo>
+ <!-- <gazebo>
     <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
       <parameters>${robot_controllers}</parameters>
       <robot_param_node>robot_state_publisher</robot_param_node>
     </plugin>
   </gazebo>
-
+-->
         <!-- Odometry plugin -->
         <gazebo>
             <plugin filename="gz-sim-odometry-publisher-system"
@@ -230,5 +230,143 @@
     <kd>1.0</kd>
   </gazebo>
 
+
+
+
+  <!-- Native joint position controllers for direct Gazebo control -->
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>lf_hip_joint</joint_name>
+      <p_gain>200</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>33.5</cmd_max>
+      <cmd_min>-33.5</cmd_min>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>lf_upper_leg_joint</joint_name>
+      <p_gain>200</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>33.5</cmd_max>
+      <cmd_min>-33.5</cmd_min>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>lf_lower_leg_joint</joint_name>
+      <p_gain>200</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>33.5</cmd_max>
+      <cmd_min>-33.5</cmd_min>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>rf_hip_joint</joint_name>
+      <p_gain>200</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>33.5</cmd_max>
+      <cmd_min>-33.5</cmd_min>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>rf_upper_leg_joint</joint_name>
+      <p_gain>200</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>33.5</cmd_max>
+      <cmd_min>-33.5</cmd_min>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>rf_lower_leg_joint</joint_name>
+      <p_gain>200</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>33.5</cmd_max>
+      <cmd_min>-33.5</cmd_min>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>lh_hip_joint</joint_name>
+      <p_gain>200</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>33.5</cmd_max>
+      <cmd_min>-33.5</cmd_min>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>lh_upper_leg_joint</joint_name>
+      <p_gain>200</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>33.5</cmd_max>
+      <cmd_min>-33.5</cmd_min>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>lh_lower_leg_joint</joint_name>
+      <p_gain>200</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>33.5</cmd_max>
+      <cmd_min>-33.5</cmd_min>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>rh_hip_joint</joint_name>
+      <p_gain>200</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>33.5</cmd_max>
+      <cmd_min>-33.5</cmd_min>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>rh_upper_leg_joint</joint_name>
+      <p_gain>200</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>33.5</cmd_max>
+      <cmd_min>-33.5</cmd_min>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>rh_lower_leg_joint</joint_name>
+      <p_gain>200</p_gain>
+      <i_gain>0.01</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>33.5</cmd_max>
+      <cmd_min>-33.5</cmd_min>
+    </plugin>
+  </gazebo>
+
 </xacro:macro>
 </robot>
+<!-- This file is appended to by the setup script -->
